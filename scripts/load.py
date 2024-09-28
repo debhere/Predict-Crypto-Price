@@ -1,19 +1,29 @@
+import pandas as pd
 from sqlalchemy import create_engine
-from transform import transform
+from config import get_etl_config
+from ..config import configurations
+#from ..predictcrypto import logger
 
-def load():
-    server='DESKTOP-OKR44CT'
-    Database = '70-461'
-    Driver = 'ODBC driver 17 for SQL Server'
-    conn_string = f'mssql://@{server}/{Database}?driver={Driver}'
+def push_data_to_db() -> None:
+    # server='DESKTOP-OKR44CT'
+    # Database = 'crypto'
+    # Driver = 'ODBC driver 17 for SQL Server'
+    server, database, driver = configurations.fetch_database_configurations()
 
-    #engine = create_engine('mssql+pyodbc://DESKTOP-OKR44CT/Deb/70-461')
+    conn_string = f'mssql://@{server}/{database}?driver={driver}'
+
+
     engine = create_engine(conn_string)
     connection = engine.connect()
-    raw = transform()
-    raw.to_sql(name = "coinbasebtcpricerawdata", con = connection, schema = "staging", 
-               if_exists = "append", index = False)
 
+    _, _, trans_path = get_etl_config()
+
+    trans = pd.read_csv(trans_path)
+
+    trans.to_sql(name = "coinbasebtcpricerawdata", con = connection, schema = "staging", 
+               if_exists = "append", index = False)
+    
 
 if __name__ == "__main__":
-    load()
+    # load()
+    push_data_to_db()
