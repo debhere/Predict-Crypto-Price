@@ -1,0 +1,4 @@
+folder : "downloads"
+raw: "raw.csv"
+transform: "transform.csv"
+interim: "interim.csv"

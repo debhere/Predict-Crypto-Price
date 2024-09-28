@@ -31,5 +31,6 @@ class DataPipeline:
                 logging.info("Connection successful...!!!")
 
             return data
+        
         except Exception as e:
             raise CustomException(e, sys)
