@@ -30,5 +30,5 @@ conda activate 'venv'
 ```
 ## Misclaneous
 
-1. You cannot invoke a module without installation if both are not having same parent directory/
+1. You cannot invoke a module without installation if both are not having same parent directory.
 
