@@ -30,5 +30,13 @@ conda activate 'venv'
 ```
 ## Misclaneous
 
-1. You cannot invoke a module without installation if both are not having sme parent directory.
+1. You cannot invoke a module without installation if both are not having same parent directory.
+2. Numeric arguments in fire automatically gets converted into integer. Consider the below example for command line argument. "19660423" is automatically convereted to integer by fire.
+
+```
+python hello.py "19660423"
+
+```
+
+
 
