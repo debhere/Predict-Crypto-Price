@@ -14,7 +14,3 @@ def transform_ohlc_data(product:str = "BTC-USD") -> None:
     trans["product"] = product
 
     trans.to_csv(trans_path, index=False)
-    
-if __name__ == "__main__":
-    #transform()
-    transform_ohlc_data()

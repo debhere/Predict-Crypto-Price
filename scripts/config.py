@@ -12,10 +12,6 @@ def get_etl_config() -> Tuple:
     
     try:
         interim_path, raw_path, trans_path = None, None, None
-
-        # CURR_DIR = "scripts"
-        # CONFIG_FILENAME = "source.yaml"
-        # CONFIG_FOLDERNAME = "_config"
         CONFIG_FILE_PATH = Path(os.path.join(CURR_DIR, CONFIG_FOLDERNAME, CONFIG_FILENAME))
             
         with open(CONFIG_FILE_PATH) as ds:

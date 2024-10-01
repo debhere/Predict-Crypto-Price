@@ -6,8 +6,8 @@ CREATE SCHEMA staging
 
 GO
 
-IF OBJECT_ID('U', 'coinbasebtcpricerawdata') IS NOT NULL
-	DROP TABLE staging.coinbasebtcpricerawdata
+
+DROP TABLE IF EXISTS staging.coinbasebtcpricerawdata
 CREATE TABLE staging.coinbasebtcpricerawdata(
 	TickTimestamp BigInt,
 	LowPrice decimal(10, 2),
