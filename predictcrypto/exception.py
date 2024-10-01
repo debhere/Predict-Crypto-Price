@@ -12,7 +12,7 @@ def exception_details(error:Exception, trace:sys) -> str:
 
 class CustomException(Exception):
     def __init__(self, error: Exception, trace: sys):
-        super.__init__(error)
+        super().__init__(error)
         self.trace = exception_details(error, trace)
 
     def __str__(self):
