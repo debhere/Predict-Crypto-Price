@@ -11,7 +11,7 @@ class DataPipeline:
     def __init__(self):
         self.cmg = ConnectionManager()
 
-    def build_pipeline(self) -> pd.DataFrame:
+    def build_static_data_pipeline(self) -> pd.DataFrame:
         try:
             
             logging.info("Building the data pipeline...")
@@ -27,3 +27,6 @@ class DataPipeline:
         
         except Exception as e:
             raise CustomException(e, sys)
+        
+    def build_stream_data_pipeline(self):
+        pass
