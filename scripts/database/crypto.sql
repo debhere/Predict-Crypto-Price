@@ -9,12 +9,12 @@ GO
 
 DROP TABLE IF EXISTS staging.coinbasebtcpricerawdata
 CREATE TABLE staging.coinbasebtcpricerawdata(
-	TickTimestamp BigInt,
-	LowPrice decimal(10, 2),
-	HighPrice decimal(10, 2),
-	OpenPrice decimal(10, 2),
-	ClosePrice decimal(10, 2),
-	Volume decimal(10, 2),
-	TickDateTime datetime,
+	ticktimestamp BigInt,
+	lowprice decimal(10, 2),
+	highprice decimal(10, 2),
+	openprice decimal(10, 2),
+	closeprice decimal(10, 2),
+	volume decimal(10, 2),
+	tickdatetime datetime,
 	product nvarchar(10)
 )
