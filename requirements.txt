@@ -1,4 +1,9 @@
 numpy
 pandas
-matplotlib
+scikit-learn
+prophet
+joblib
+fire
+sqlalchemy
+streamlit
 -e .

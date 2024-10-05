@@ -28,6 +28,11 @@ activate conda
 ```
 conda activate 'venv'
 ```
+
+## Streamlit
+
+1. Realized that a stream object (write_stream) gets the app automatically refreshed.
+
 ## Misclaneous
 
 1. You cannot invoke a module without installation if both are not having same parent directory.

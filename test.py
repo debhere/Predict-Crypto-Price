@@ -3,15 +3,15 @@ import requests
 import pandas as pd
 from datetime import datetime
 from predictcrypto.exception import CustomException
+from predictcrypto.pipeline.data_pipeline import DataPipeline
+from predictcrypto.pipeline.transformation_pipeline import TransformationPipeline
 
-def test():
-    start = "20240101"
-    end = "20240831"
-
-    days = pd.date_range(start=start, end=end)
-    days = [day.strftime('%Y%m%d') for day in days]
-    print(days)
 
 if __name__ == "__main__":
-    test()
+    dp = DataPipeline()
+    df = dp.build_static_data_pipeline()
+
+    tp = TransformationPipeline()
+    df_ = tp.make_transformation(df)
+    print(df_.head())
     

@@ -2,7 +2,7 @@
 
 rm -rf downloads
 
-echo "Starting data loading...!!!"
+echo "Downloading data...!!!"
 
 product="BTC-USD"
 start_date="20240101"
