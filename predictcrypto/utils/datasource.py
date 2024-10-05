@@ -2,12 +2,13 @@ import sys
 
 from dataclasses import dataclass
 from typing import Any
-from sqlalchemy import create_engine
 
-from src.predictcrypto.exception import CustomException
-from src.predictcrypto.logger import logging
+from sqlalchemy import create_engine # type: ignore
 
-from src.predictcrypto.utils.config_manager import fetch_database_configurations
+from predictcrypto.exception import CustomException
+from predictcrypto.logger import logging
+
+from predictcrypto.utils.config_manager import fetch_database_configurations
 
 
 
