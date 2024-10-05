@@ -1,4 +1,8 @@
-import streamlit as st
+import streamlit as st # type: ignore
+import pandas as pd
+
+from prophet.serialize import model_from_json # type: ignore
+
 import time
 from datetime import datetime
 
@@ -40,5 +44,23 @@ with col3:
 btnLabel = f"Predict {crypto} prices"
 
 if st.button(btnLabel):
-    selection = f'You have selected {crypto} for {pred_dt} {pred_tm}'
-    st.write(selection)
+    #selection = f'You have selected {crypto} for {pred_dt} {pred_tm}'
+    
+    pred_dt = str(pred_dt)
+    pred_tm = str(pred_tm)   
+    dt_str = pred_dt +" "+ pred_tm
+
+    ds = datetime.strptime(dt_str, "%Y-%m-%d %H:%M:%S")
+    cols = {
+        'ds': [ds]
+    }
+    df = pd.DataFrame(cols)
+
+    with open('serialized_model.json', 'r') as fin:
+        model = model_from_json(fin.read())
+        f = model.predict(df)
+        prediction = f['yhat'].values
+        
+        prediction_text = f"The predicted crypto price for {ds} is {prediction}"
+    
+    st.write(prediction_text)
