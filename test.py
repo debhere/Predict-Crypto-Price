@@ -2,9 +2,9 @@ import sys
 import requests
 import pandas as pd
 from datetime import datetime
-from predictcrypto.exception import CustomException
-from predictcrypto.pipeline.data_pipeline import DataPipeline
-from predictcrypto.pipeline.transformation_pipeline import TransformationPipeline
+from src.predictcrypto.exception import CustomException
+from src.predictcrypto.pipeline.data_pipeline import DataPipeline
+from src.predictcrypto.pipeline.transformation_pipeline import TransformationPipeline
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 import sys
 import pandas as pd
-from predictcrypto.exception import CustomException
-from predictcrypto.logger import logging
+from src.predictcrypto.exception import CustomException
+from src.predictcrypto.logger import logging
 
 
 class TransformationPipeline:
