@@ -49,7 +49,8 @@ python hello.py "19660423"
 conda env remove -p "[FULL PATH]"
 
 ```
-4. If exists remove setup.py else pyproject.toml file will not work
+4. If exists remove setup.py else pyproject.toml file will not work.
+5. pyodbc is pre-requisite for sqlalchemy.
 
 
 
