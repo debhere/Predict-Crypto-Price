@@ -10,14 +10,6 @@ from predictcrypto.pipeline.transformation_pipeline import TransformationPipelin
 
 from predictcrypto.component.train import BestModel
 
-# from exception import CustomException
-# from logger import logging
-
-# from pipeline.data_pipeline import DataPipeline
-# from pipeline.transformation_pipeline import TransformationPipeline
-
-# from train import BestModel
-
 from prophet.serialize import model_to_json, model_from_json # type: ignore
 
 def training_manager(modelname: str) -> None:
