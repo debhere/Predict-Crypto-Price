@@ -1,5 +1,5 @@
 import pandas as pd
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine # type: ignore
 from config import get_etl_config, fetch_database_configurations
 
 

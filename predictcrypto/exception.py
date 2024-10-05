@@ -1,5 +1,5 @@
 import sys
-from .logger import logging
+from predictcrypto.logger import logging
 
 def exception_details(error:Exception, trace:sys) -> str:
     _,_, exc = trace.exc_info()

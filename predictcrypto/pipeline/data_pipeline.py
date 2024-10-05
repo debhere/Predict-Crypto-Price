@@ -11,7 +11,7 @@ class DataPipeline:
     def __init__(self):
         self.cmg = ConnectionManager()
 
-    def build_static_data_pipeline(self) -> pd.DataFrame:
+    def build_base_data_pipeline(self) -> pd.DataFrame:
         try:
             
             logging.info("Building the data pipeline...")

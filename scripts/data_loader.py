@@ -1,4 +1,5 @@
-import fire
+import fire # type: ignore
+
 from extract import get_ohlc_data_from_coinbase
 from transform import transform_ohlc_data
 from load import push_data_to_db

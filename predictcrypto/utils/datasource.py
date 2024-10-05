@@ -2,7 +2,8 @@ import sys
 
 from dataclasses import dataclass
 from typing import Any
-from sqlalchemy import create_engine
+
+from sqlalchemy import create_engine # type: ignore
 
 from predictcrypto.exception import CustomException
 from predictcrypto.logger import logging
@@ -29,7 +30,7 @@ class ConnectionManager:
 
             conn_string = f'mssql://@{server}/{db}?driver={driver}'
             engine = create_engine(conn_string)
-            
+             
             logging.info("Establishing database connection")
 
             return engine
