@@ -10,7 +10,7 @@ This project is a Machine Learning implementation to predict the time weighted a
 
 ## History
 
-- ver_0.0.1: deployed on Oct 7, 2024. Base model created with facebook prophet trained with 9 months (6 Oct, 2024) of OHLC data from 1 Jan, 2024 to 6 Oct, 2024 to predict ONLY Bitcoin price.
+- ver_0.0.1: deployed on Oct 7, 2024. Base model created with facebook prophet trained with 9 months (6 Oct, 2024) worth of OHLC data from 1 Jan, 2024 to 6 Oct, 2024 to predict ONLY Bitcoin price.
 
 ## Tech Stack
 
