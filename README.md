@@ -8,6 +8,10 @@ This project is a Machine Learning implementation to predict the time weighted a
 - [@debhere](https://www.github.com/debhere)
 
 
+## History
+
+- ver_0.0.1: deployed on Oct 7, 2024. Base model created with prophet trained with 6 months of OHLC data from 1 Jan, 2024 to 30 Sep, 2024 to predict ONLY Bitcoin price.
+
 ## Tech Stack
 
 **Server:** Streamlit
