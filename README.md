@@ -16,6 +16,8 @@ This project is a Machine Learning implementation to predict the time weighted a
 
 **Server:** Streamlit
 
+**Language:** Python, T-SQL, Bash Script
+
 **Machine Learning:** Meta Prophet
 
 **Database:** Sql-Server 19
@@ -31,7 +33,7 @@ It is a general ETL (Extract, Transform, Load) methodology where the data is ext
 
 ## Database
 
-As mentioned earlier, the collected data is stored locally into a sql-server database. Refer the sql script to create the database schema [here](/scripts/database/crypto.sql).
+As mentioned earlier, the collected data is stored locally into a sql-server database. Refer the sql script [here](/scripts/database/crypto.sql) to create the database schema.
 
 Presently, only one table is created for Bitcoin.
 
@@ -110,7 +112,7 @@ The presentation layer (front-end) is very light-weight at this moment with the 
 
 ### Extract-Transform-Load (ETL)
 
-*scripts* contains the source code of the ETL pipeline. Ensure to update the database server name in the db config file [here](/scripts/_config/database.yaml).Upon running the shell script data_prep.sh, the ohlc data will be inserted into the database. Consider this piece as the pre-requisite as until the data collection is done the learning process cannot be started.
+*scripts* contains the source code of the ETL pipeline. Ensure to update the database server name in the db config file [here](/scripts/_config/database.yaml). Upon running the shell script data_prep.sh, the ohlc data will be inserted into the database. Consider this piece as the pre-requisite as until the data collection is done the learning process cannot be started.
 
 Currently, the data is corrected for the period of 6 months (01-Jan-2024 to 30-Sep-2024). Change the start and end date within the script for any preferred date range. Ensure to delete any existing data from the table before running the shell script or else the data will be appended.
 
