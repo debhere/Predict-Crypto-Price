@@ -10,13 +10,13 @@ This project is a Machine Learning implementation to predict the time weighted a
 
 ## History
 
-- ver_0.0.1: deployed on Oct 7, 2024. Base model created with prophet trained with 6 months of OHLC data from 1 Jan, 2024 to 30 Sep, 2024 to predict ONLY Bitcoin price.
+- ver_0.0.1: deployed on Oct 7, 2024. Base model created with facebook prophet trained with 9 months (6 Oct, 2024) of OHLC data from 1 Jan, 2024 to 6 Oct, 2024 to predict ONLY Bitcoin price.
 
 ## Tech Stack
 
 **Server:** Streamlit
 
-**Language:** Python, T-SQL, Bash Script
+**Languages:** Python, T-SQL, Bash Script
 
 **Machine Learning:** Meta Prophet
 
@@ -25,7 +25,7 @@ This project is a Machine Learning implementation to predict the time weighted a
 
 ## Dataset
 
-Data collection is a key step in any machine learning initiative. The dataset contains 6 month worth of bitcoin ohlc (open, high, low, close) prices over a granularity of 5 mins. 
+Data collection is a key step in any machine learning initiative. The dataset contains 9 month (till Oct 6, 2024) worth of bitcoin ohlc (open, high, low, close) prices over a granularity of 5 mins. 
 
 In order to do that, the coinbase api https://docs.cdp.coinbase.com/exchange/reference/exchangerestapi_getproductcandles is invoked and the data is stored in a local sql-server database.
 
