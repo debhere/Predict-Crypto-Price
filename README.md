@@ -134,10 +134,11 @@ Streamlit framework is used for a fast deployment of the front-end web interface
 ### Upcoming Changes
 
 1. Support for multiple crypto assets.
-2. Schedule the data collection.
-3. Verify the prediction w.r.t current price.
-4. Integrate MlOps for efficient model registry.
-3. If possible migrate the database from local to cloud.
+2. Tune the model.
+3. Schedule the data collection.
+4. Verify the prediction w.r.t current price.
+5. Integrate MlOps for efficient model registry.
+6. If possible migrate the database from local to cloud.
 
 ## Support
 
