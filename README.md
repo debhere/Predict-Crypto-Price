@@ -31,7 +31,7 @@ It is a general ETL (Extract, Transform, Load) methodology where the data is ext
 
 ## Database
 
-As mentioned earlier, the collected data is stored locally into a sql-server database. Refer the sql script to create the database schema. [here](/scripts/database/crypto.sql)
+As mentioned earlier, the collected data is stored locally into a sql-server database. Refer the sql script to create the database schema [here](/scripts/database/crypto.sql).
 
 Presently, only one table is created for Bitcoin.
 
@@ -99,38 +99,43 @@ Start the server
 
 ## Description
 
-There are 4 main sections (if you will) for this project:-
+There are 3 main sections (if you will) for this project:-
 
 - Extract-Transform-Load
-- Data pipelne
-- Model Implementation
+- Model Implementation & Pipeline
 - Streamlit server for front-end
 
 The presentation layer (front-end) is very light-weight at this moment with the solitary aim to grab user input and predict the Bitcoin TWAP price. 
 
+
+### Extract-Transform-Load (ETL)
+
+*scripts* contains the source code of the ETL pipeline. Ensure to update the database server name in the db config file [here](/scripts/_config/database.yaml).Upon running the shell script data_prep.sh, the ohlc data will be inserted into the database. Consider this piece as the pre-requisite as until the data collection is done the learning process cannot be started.
+
+Currently, the data is corrected for the period of 6 months (01-Jan-2024 to 30-Sep-2024). Change the start and end date within the script for any preferred date range. Ensure to delete any existing data from the table before running the shell script or else the data will be appended.
+
 ### Model Implementation
 
-*src* contains the primary source code of the entire model implmentation mechanism. The primary components are "data ingestion", "data transformation", "model building", and "model evaluation"
+*predictcrypto* contains the primary source code of the entire model implmentation mechanism. The primary components is "train" while "cmg" is the component manager.
 
-*pipeline* contains the data-pipeline and prediction-pipeline.
+*pipeline* contains the data-pipeline and tranformation-pipeline
 
-*utils* directory comprises of common utility functions that is being referred throughout the project.
+*utils* directory comprises of utility functions and methods that is being referred throughout the project.
 
-The starting point of the "model implemention" module is learn.py where each component is being invoked one by one ie., 
-
-data ingestion -> data transformation -> pipeline creation -> model building -> model evaluation.
-
-The best estimator and data pipeline are saved as pickle files as artifacts.
+trainer.sh script is run to train the model and generate the serialized model in a json file which is preferred format for 'prophet'.
 
 ### Front-End
 
-Front-end is nothing but a playground of the model output. Although the majority of the features are anonymized but still thought to create a light-weight interface to demonstrate the usability.
+Streamlit framework is used for a fast deployment of the front-end web interface. User can provide the inputs, the model is invoked to return the prediction on the web itself.
 
-index.html is the solitary html page here with basic css in place.
 
-### Back-End
+### Upcoming Changes
 
-The back-end server should be kept light-weight for obvious reasons. app.py is the starting point to run the flask server. Once the server is up and running, user will be able to input data onto the front-end html page. flask server captures and performs the data transformation and prediction by invoking the prediction pipeline module. Thereafter, the prediction is rendered on the same UI.
+1. Support for multiple crypto assets.
+2. Schedule the data collection.
+3. Verify the prediction w.r.t current price.
+4. Integrate MlOps for efficient model registry.
+3. If possible migrate the database from local to cloud.
 
 ## Support
 
