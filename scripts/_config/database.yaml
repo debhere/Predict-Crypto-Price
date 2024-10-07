@@ -1,0 +1,3 @@
+SERVER: [YOUR-SERVER-NAME]
+DATABASE: 'crypto'
+DRIVER: 'ODBC driver 17 for SQL Server'
