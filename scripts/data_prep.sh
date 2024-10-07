@@ -6,7 +6,7 @@ echo "Downloading data...!!!"
 
 product="BTC-USD"
 start_date="20240101"
-end_date="20240630"
+end_date="20241006"
 
 python scripts/data_loader.py $product $start_date $end_date
 

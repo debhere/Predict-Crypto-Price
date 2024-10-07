@@ -59,8 +59,8 @@ if st.button(btnLabel):
     with open('serialized_model.json', 'r') as fin:
         model = model_from_json(fin.read())
         f = model.predict(df)
-        prediction = f['yhat'].values
+        prediction = f['yhat'].values[0]
         
-        prediction_text = f"The predicted crypto price for {ds} is {prediction}"
+        prediction_text = f"The predicted {crypto} price for {ds} is {prediction}"
     
     st.write(prediction_text)
