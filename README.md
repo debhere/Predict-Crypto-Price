@@ -1,7 +1,7 @@
 
 # Predict Crypto-Currency Price
 
-This project is a Machine Learning implementation to predict the time weighted average price (TWAP) for a crypto currency asset (currently only Bitcoin).
+This project is a Machine Learning implementation to predict the time weighted average price (TWAP) for a crypto currency asset (currently only Bitcoin). The project is deployed on cloud and can be accessed with through https://predict-crypto-price.onrender.com/
 
 ## Authors
 
@@ -14,19 +14,20 @@ This project is a Machine Learning implementation to predict the time weighted a
 
 **Machine Learning:** Meta Prophet
 
+**Database:** Sql-Server 19
 
 
 ## Dataset
 
 Data collection is a key step in any machine learning initiative. The dataset contains 6 month worth of bitcoin ohlc (open, high, low, close) prices over a granularity of 5 mins. 
 
-In order to do that, the coinbase api https://docs.cdp.coinbase.com/exchange/reference/exchangerestapi_getproductcandles is invoked and stored in a local sql-server database.
+In order to do that, the coinbase api https://docs.cdp.coinbase.com/exchange/reference/exchangerestapi_getproductcandles is invoked and the data is stored in a local sql-server database.
 
 It is a general ETL (Extract, Transform, Load) methodology where the data is extracted from an external api, transformed as applicable and loaded into the database. 
 
 ## Database
 
-As mentioned, the collected data is stored locally into a sql-server database. Refer the sql script to create the database schema. [here](/scripts/database/crypto.sql)
+As mentioned earlier, the collected data is stored locally into a sql-server database. Refer the sql script to create the database schema. [here](/scripts/database/crypto.sql)
 
 Presently, only one table is created for Bitcoin.
 
@@ -71,11 +72,19 @@ Activate virtual environment
 ```
 
 
-
 Install dependencies
 
 ```bash
   pip install -e .
+```
+
+create the database schema in sql server. Refer the script at /scripts/database/crypto.sql
+
+
+collect the data and insert into the database
+
+```bash
+./scripts/data_prep.sh
 ```
 
 Start the server
@@ -86,13 +95,14 @@ Start the server
 
 ## Description
 
-There are 3 main sections (if you will) of this project:-
+There are 4 main sections (if you will) for this project:-
 
+- Extract-Transform-Load
+- Data pipelne
 - Model Implementation
-- Front-End
-- Back-end
+- Streamlit server for front-end
 
-Since , the primary objective of the project to detect the fradulent credit card transactions, the front-end and back-end are quite light-weight in nature.
+The presentation layer (front-end) is very light-weight at this moment with the solitary aim to grab user input and predict the Bitcoin TWAP price. 
 
 ### Model Implementation
 
