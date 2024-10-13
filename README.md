@@ -16,7 +16,7 @@ This project is a Machine Learning implementation to predict the time weighted a
 
 **Server:** Streamlit
 
-**Languages:** Python, T-SQL, Bash Script
+**Languages:** Python, T-SQL, Bash
 
 **Machine Learning:** Meta Prophet
 
