@@ -41,7 +41,7 @@ Presently, only one table is created for Bitcoin.
 
 - **python 3.11+**
 - **streamlit**
-- **sckit-learn**
+- **scikit-learn**
 - **numpy**
 - **pandas**
 - **pyyaml**
