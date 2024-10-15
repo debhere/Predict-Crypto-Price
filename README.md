@@ -18,7 +18,7 @@ This project is a Machine Learning implementation to predict the time weighted a
 
 **Languages:** Python, T-SQL, Bash
 
-**Machine Learning:** Meta Prophet
+**Model:** Meta Prophet
 
 **Database:** Sql-Server 19
 
@@ -139,6 +139,10 @@ Streamlit framework is used for a fast deployment of the front-end web interface
 4. Verify the prediction w.r.t current price.
 5. Integrate MlOps for efficient model registry.
 6. If possible migrate the database from local to cloud.
+
+## Updates
+
+1. Data loader is updated to download data for multiple crypto assets.
 
 ## Support
 
