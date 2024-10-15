@@ -4,14 +4,25 @@ from extract import get_ohlc_data_from_coinbase
 from transform import transform_ohlc_data
 from load import push_data_to_db
 
-def fetch_remote_data(product:str, from_date:str, to_date:str):
+
+def fetch_remote_data(from_date:str, to_date:str) -> None:
+    tblmap = {
+        'BTC-USD': "coinbasebtcpriceraw",
+        'ETH-USD': "coinbasethpriceraw"
+    }
+
+    for k, v in tblmap.items():
+        fetch_remote_data_for_each_product(k, from_date, to_date, v)
+
+
+def fetch_remote_data_for_each_product(product:str, from_date:str, to_date:str, tblname) -> None:
     try:
         from_date = str(from_date)
         to_date = str(to_date)
 
         get_ohlc_data_from_coinbase(product, from_date, to_date)
         transform_ohlc_data(product)
-        push_data_to_db()
+        push_data_to_db(tblname)
 
     except Exception as e:
         print("Error occured", e)
