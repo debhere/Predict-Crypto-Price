@@ -1,4 +1,4 @@
-import requests
+import requests # type: ignore
 import pandas as pd
 from typing import Optional
 from config import get_etl_config
