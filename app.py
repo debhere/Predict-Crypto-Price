@@ -32,7 +32,7 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     crypto = col1.selectbox("Select currency of your choice",
-                        ("Bitcoin"))
+                        ("Bitcoin", "Ethereum"))
 with col2:
     pred_dt = col2.date_input("Select your date", d)
 
