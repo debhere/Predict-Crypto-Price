@@ -7,6 +7,7 @@ CREATE SCHEMA staging
 GO
 
 
+
 DROP TABLE IF EXISTS staging.coinbasebtcpriceraw
 CREATE TABLE staging.coinbasebtcpriceraw(
 	ticktimestamp BigInt,
@@ -20,7 +21,7 @@ CREATE TABLE staging.coinbasebtcpriceraw(
 )
 
 DROP TABLE IF EXISTS staging.coinbasebtcpricerawhistory
-CREATE TABLE staging.coinbasebtcpricerawhisdata(
+CREATE TABLE staging.coinbasebtcpricerawhistory(
 	ticktimestamp BigInt,
 	lowprice decimal(10, 2),
 	highprice decimal(10, 2),
@@ -32,7 +33,7 @@ CREATE TABLE staging.coinbasebtcpricerawhisdata(
 )
 
 DROP TABLE IF EXISTS staging.coinbasethpriceraw
-CREATE TABLE staging.coinbaseethpriceraw(
+CREATE TABLE staging.coinbasethpriceraw(
 	ticktimestamp BigInt,
 	lowprice decimal(10, 2),
 	highprice decimal(10, 2),
@@ -43,8 +44,8 @@ CREATE TABLE staging.coinbaseethpriceraw(
 	product nvarchar(10)
 )
 
-DROP TABLE IF EXISTS staging.coinbasethcpricerawhistory
-CREATE TABLE staging.coinbasethpricerawhisdata(
+DROP TABLE IF EXISTS staging.coinbasethpricerawhistory
+CREATE TABLE staging.coinbasethpricerawhistory(
 	ticktimestamp BigInt,
 	lowprice decimal(10, 2),
 	highprice decimal(10, 2),
@@ -53,3 +54,4 @@ CREATE TABLE staging.coinbasethpricerawhisdata(
 	volume decimal(10, 2),
 	tickdatetime datetime,
 	product nvarchar(10)
+)
