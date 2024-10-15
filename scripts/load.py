@@ -3,7 +3,7 @@ from sqlalchemy import create_engine # type: ignore
 from config import get_etl_config, fetch_database_configurations
 
 
-def push_data_to_db() -> None:
+def push_data_to_db(tblname) -> None:
 
     server, database, driver = fetch_database_configurations()
     conn_string = f'mssql://@{server}/{database}?driver={driver}'
@@ -15,5 +15,5 @@ def push_data_to_db() -> None:
 
     trans = pd.read_csv(trans_path)
 
-    trans.to_sql(name = "coinbasebtcpricerawdata", con = connection, schema = "staging", 
+    trans.to_sql(name = tblname, con = connection, schema = "staging", 
                if_exists = "append", index = False)
