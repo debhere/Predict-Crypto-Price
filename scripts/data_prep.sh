@@ -5,11 +5,16 @@ rm -rf downloads
 echo "Downloading data...!!!"
 
 #products=("BTC-USD", "ETH-USD", "DOGE-USD", "LTC-USD", "USDT-USD")
-#product="BTC-USD"
-start_date="20240101"
-end_date="20241014"
 
-#python scripts/data_loader.py $product $start_date $end_date
+end_date="$(date --date="yesterday" "+%Y%m%d")"
+
+if [ "$1" != "y" ]
+then 
+    start_date="$(date --date="-2 days" "+%Y%m%d")"
+else
+    start_date="20240101"
+fi
+
 
 python scripts/data_loader.py $start_date $end_date
 
