@@ -1,6 +1,6 @@
 [project]
 name = "predictcrypto"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = ["scikit-learn", "pandas", "numpy", "prophet", "joblib", "pyodbc",
                 "fire", "sqlalchemy", "streamlit", "requests", "pyyaml"]
 
