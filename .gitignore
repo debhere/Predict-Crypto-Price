@@ -9,7 +9,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 config/
-scripts/_config/database.yaml
 build/
 develop-eggs/
 dist/
