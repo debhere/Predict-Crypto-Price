@@ -4,7 +4,7 @@ import pandas as pd
 from prophet.serialize import model_from_json # type: ignore
 
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 
 d = datetime.now()
 t = d.time()
@@ -30,11 +30,16 @@ st.title("Cypto Price Prediction")
 
 col1, col2, col3 = st.columns(3)
 
+
+upper_limit = datetime.strptime((d + timedelta(days=5)).strftime("%Y/%m/%d"), "%Y/%m/%d")
+
+
 with col1:
     crypto = col1.selectbox("Select currency of your choice",
                         ("Bitcoin", "Ethereum"))
 with col2:
-    pred_dt = col2.date_input("Select your date", d)
+    #pred_dt = col2.date_input("Select your date", d)
+    pred_dt = col2.date_input("Select your date", min_value=d, max_value=upper_limit)
 
 with col3:
     pred_tm = col3.time_input("select your time", value="now", step=60)
